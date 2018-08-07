@@ -1,4 +1,11 @@
 class Application < Sinatra::Base
-  # Write your code here!
+  set :views, Proc.new { File.join(root, "views/") }
 
+  get '/' do
+    erb :index
+  end
+
+  post '/greet' do
+    erb :greet
+  end
 end
